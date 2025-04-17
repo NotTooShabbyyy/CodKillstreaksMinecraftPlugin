@@ -16,7 +16,7 @@ public class CodKillstreaksPlugin extends JavaPlugin {
     public void onEnable() {
         instance = this;
         getLogger().info("CodKillstreaksPlugin has been enabled!");
-        getCommand("CarePackage").setExecutor(new CodKillstreakCommandHandler(this));
+        getCommand("codhelp").setExecutor(new CodKillstreakCommandHandler(this));
         getServer().getPluginManager().registerEvents(new CodKillstreakEventHandler(this), this);
     }
 

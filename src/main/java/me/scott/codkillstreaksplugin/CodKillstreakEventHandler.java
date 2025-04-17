@@ -10,12 +10,14 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class CodKillstreakEventHandler implements Listener {
-    private CodKillstreaksPlugin mainPlugin = CodKillstreaksPlugin.getInstance();
+    private CodKillstreaksPlugin mainPlugin;
     private CodKillstreaksScoreboard scoreboard = CodKillstreaksScoreboard.getInstance();
     private KillTracker killTracker = KillTracker.getInstance();
 
 
-
+    public CodKillstreakEventHandler(CodKillstreaksPlugin mainPlugin) {
+        this.mainPlugin = CodKillstreaksPlugin.getInstance();
+    }
 
 
     @EventHandler
