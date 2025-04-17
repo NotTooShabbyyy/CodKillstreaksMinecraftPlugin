@@ -1,0 +1,17 @@
+name: CodKillstreaksPlugin
+main: me.scott.codkillstreaksplugin.CodKillstreaksPlugin
+version: 1.0
+api-version: 1.16
+author: NotTooShabby
+description: A Call of Duty-style killstreaks plugin for Minecraft.
+website: https://example.com
+
+commands:
+  codstreaks:
+    description: Shows your current killstreak.
+    usage: /<command>
+
+permissions:
+  codkillstreaks.use:
+    description: Allows use of killstreaks
+    default: true
