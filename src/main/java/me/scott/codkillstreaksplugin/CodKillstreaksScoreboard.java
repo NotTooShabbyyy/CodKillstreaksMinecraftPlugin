@@ -36,20 +36,27 @@ public class CodKillstreaksScoreboard {
       // Attach this obj (HTML look-a-like container div to user UI)
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
         obj.getScore("").setScore(2);
-        obj.getScore(ChatColor.GRAY + "Kills + " + killTracker.getCurrentKills(uuid)).setScore(1);
+        obj.getScore(ChatColor.GRAY + "Kills: " + killTracker.getCurrentKills(uuid)).setScore(1);
     }
 
 
     public void updatePlayerScoreboard(Player player) {
       UUID uuid = player.getUniqueId();
-      Scoreboard playerBoard = getPlayerBoard(uuid);
+      Scoreboard playerBoard = playerBoards.get(uuid);
+      Objective playerObj = playerObjectives.get(uuid);
 
+      // Reset board
+      resetPlayerBoardEntries(player);
 
-
+      // update those score vals
+      playerObj.getScore(ChatColor.WHITE + "").setScore(4);
+      playerObj.getScore(ChatColor.GRAY + "Kills " + killTracker.getCurrentKills(uuid)).setScore(3);
+      playerObj.getScore(ChatColor.GOLD + "").setScore(2);
+      playerObj.getScore("Highest Killstreak: " + killTracker.getCurrentKills(uuid)).setScore(1);
     }
 
 
-    public void resetPlayerObjectives(Player player) {
+    public void resetPlayerBoardEntries(Player player) {
       UUID uuid = player.getUniqueId();
       Scoreboard playerBoard = playerBoards.get(uuid);
 
